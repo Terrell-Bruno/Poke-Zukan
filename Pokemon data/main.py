@@ -10,17 +10,29 @@ data = pd.read_csv('pokemon.csv')
 app = ctk.CTk()
 app.geometry("1920x1080")
 app.title("Poke-Zukan")
+app.configure(fg_color="darkgray")
 
+search_insert = ctk.CTkEntry(app,
+                             placeholder_text="Search Pokemon")
+search_insert.grid(padx=0,
+                   pady=0,
+                   column=0,
+                   row=0)
 
 search_button = ctk.CTkButton(app,
                               text="Search")
-search_button.pack(pady=500)
+search_button.grid(padx=0,
+                   pady=0,
+                   column=0,
+                   row=0)
 
-label1 = ctk.CTkLabel(app,
-                      text="Poke-Zukan Searcher",
-                      height=500,
-                      width=500)
-label1.pack(pady=250)
+Title = ctk.CTkLabel(app,
+                      text="Poke-Zukan Searcher"
+                      )
+Title.grid(padx=960,
+            pady=50,
+           column=0,
+           row=0)
 
 pokemon_types = {
     "Fire": 0,
@@ -41,6 +53,6 @@ pokemon_types = {
     "Psychic": 0,
     "Electric": 0,
     "Poison": 0,
-         }
+    }
 
 app.mainloop()
